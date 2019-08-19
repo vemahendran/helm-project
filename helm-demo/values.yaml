@@ -1,0 +1,9 @@
+environment: development
+container:
+  name: helm-demo
+  version: v1.0.0
+  port: 9090
+  image: vemahendran/demo-service
+  tag: hello
+  namespace: pirates
+replicas: 1
