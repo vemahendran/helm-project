@@ -82,7 +82,7 @@ $helm install --name myapp helm-demo
 #### Test the container changes
 ```
 $kubectl get svc,po,deployments
-$curl http://$(kubectl get svc/helm-demo-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}'):80/hello
+curl http://$(kubectl get svc/helm-demo-service -n pirates -o jsonpath='{.status.loadBalancer.ingress[0].ip}'):9090/demo-service/v1.0/names
 ```
 
 #### Update the manifest
