@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 cd terraform
 terraform init
 terraform validate
@@ -48,3 +47,5 @@ kubectl get svc,po,deployments -n pirates
 printf "\n---------\n"
 echo "The output:"
 curl http://$(kubectl get svc/helm-demo-service -n pirates -o jsonpath='{.status.loadBalancer.ingress[0].ip}'):9090/demo-service/v1.0/names
+
+# kubectl logs -n pirates --tail=10 --follow helm-demo-56766ccbc-mkhcm
