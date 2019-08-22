@@ -90,6 +90,23 @@ curl http://$(kubectl get svc/helm-demo-service -n pirates -o jsonpath='{.status
 $helm upgrade myapp helm-demo
 ```
 
+#### Rollback the manifest
+```
+$helm list
+```
+- It shows the total number of revisions
+```
+$helm history <release_name>
+```
+e.g. `$helm history myapp`
+
+Then run,
+```
+$helm rollback <release_name> <release_version>
+```
+e.g. `$helm rollback myapp 1`
+
+
 #### Delete the manifest on K8s
 ```
 $ helm ls
