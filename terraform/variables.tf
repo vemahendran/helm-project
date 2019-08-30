@@ -2,7 +2,7 @@
 // Google Compute Platform variables
 
 variable cluster_name {
-  default     = "abc-cluster"
+  default     = "caribbean-cluster"
   type        = "string"
   description = "The GCP cluster name"
 }
@@ -30,13 +30,13 @@ variable subnet_names {
 }
 
 output "cluster_name" {
-  value = "${google_container_cluster.abc.name}"
+  value = "${google_container_cluster.pirates.name}"
 }
 
 output "cluster_location" {
-  value = "${google_container_cluster.abc.location}"
+  value = "${google_container_cluster.pirates.location}"
 }
 
 output "cluster_ipv4_cidr" {
-  value = "${google_container_cluster.abc.cluster_ipv4_cidr}"
+  value = "${google_container_cluster.pirates.cluster_ipv4_cidr}"
 }

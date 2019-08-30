@@ -4,11 +4,11 @@ cd terraform
 terraform init
 terraform validate
 terraform plan
-echo "yes" | terraform apply
+terraform apply
 cd ..
 
 echo "Create cluster through Terraform commands"
-gcloud container clusters get-credentials abc-cluster --zone us-west1-a --project thrashingcorecode-249409
+gcloud container clusters get-credentials caribbean-cluster --zone us-west1-a --project thrashingcorecode-249409
 
 printf "\n---------\n"
 echo "Give permission to tiller pod in Cluster"
@@ -33,6 +33,7 @@ ls helm-demo
 
 printf "\n---------\n"
 echo "Clean up the resources from any previous deployments:"
+# Ensure you don't run this on production
 kubectl delete all --selector app=helm-demo
 
 printf "\n---------\n"

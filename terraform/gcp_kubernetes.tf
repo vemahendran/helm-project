@@ -1,8 +1,8 @@
 
-resource "google_container_cluster" "abc" {
+resource "google_container_cluster" "pirates" {
   name               = "${var.cluster_name}"
   location           = "${var.datacenter_location}"
-  initial_node_count = "1"
+  initial_node_count = "4"
 
   node_locations = [
     "us-west1-b"

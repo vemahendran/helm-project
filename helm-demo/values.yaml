@@ -6,4 +6,4 @@ container:
   image: vemahendran/demo-service
   tag: hello
   namespace: pirates
-replicas: 1
+replicas: 3
